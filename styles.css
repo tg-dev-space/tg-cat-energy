@@ -1,0 +1,375 @@
+@font-face {
+  font-family: "Oswald";
+  src: url("/assets/fonts/Oswald-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-white-30: #ffffff30;
+  --color-green: #68b738;
+  --color-green-2: #5eaa2f;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+input {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+button:disabled,
+input:disabled {
+  cursor: default;
+}
+
+body {
+  position: relative;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  padding: 53px 110px;
+  text-align: center;
+}
+@media (max-width: 1200px) {
+  .container {
+    padding: 42px 30px;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 30px;
+  }
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+}
+@media (max-width: 1200px) {
+  .header {
+    position: relative;
+  }
+}
+.header .logo-link {
+  display: block;
+  outline: transparent;
+  transition: opacity 0.3s ease-in-out;
+}
+.header .logo-link:hover, .header .logo-link:focus {
+  opacity: 0.8;
+}
+.header .logo-link:active {
+  opacity: 0.6;
+}
+.header-wrapper {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .nav {
+  display: flex;
+  gap: 1rem;
+}
+@media (max-width: 760px) {
+  .header .nav {
+    display: none;
+  }
+}
+.header .nav-link {
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  color: var(--color-white);
+  outline: transparent;
+  transition: opacity 0.3s ease-in-out;
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.header .nav-link:hover, .header .nav-link:focus {
+  opacity: 0.6;
+}
+.header .nav-link:active {
+  opacity: 0.3;
+}
+@media (max-width: 1200px) {
+  .header .nav-link {
+    color: var(--color-black);
+  }
+}
+.header .nav-link.active {
+  border-bottom: 2px solid var(--color-white);
+}
+@media (max-width: 1200px) {
+  .header .nav-link.active {
+    border-bottom: 2px solid var(--color-green);
+  }
+}
+.header .burger {
+  display: none;
+}
+@media (max-width: 760px) {
+  .header .burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 30px;
+  }
+}
+.header .burger-line {
+  width: 24px;
+  height: 1.5px;
+  background-color: var(--color-black);
+}
+
+.hero {
+  position: relative;
+}
+@media (max-width: 420px) {
+  .hero {
+    display: flex;
+    justify-content: center;
+  }
+}
+.hero .content {
+  position: relative;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 414px;
+  margin: 115px 80px;
+}
+@media (max-width: 1200px) {
+  .hero .content {
+    margin: 40px 80px;
+  }
+}
+@media (max-width: 768px) {
+  .hero .content {
+    margin: 0px 80px calc(570px - (768px - 100vw) * 0.5) 80px;
+  }
+}
+@media (max-width: 576px) {
+  .hero .content {
+    max-width: 249px;
+    margin: 0 0 calc(20px - (576px - 100vw) * 0.5);
+  }
+}
+@media (max-width: 420px) {
+  .hero .content {
+    align-items: center;
+    max-width: 100%;
+    margin: 0;
+  }
+}
+.hero .content .title {
+  margin-bottom: 40px;
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: none;
+  text-align: left;
+}
+@media (max-width: 480px) {
+  .hero .content .title {
+    margin-bottom: 25px;
+    font-size: 32px;
+    line-height: 32px;
+  }
+}
+@media (max-width: 420px) {
+  .hero .content .title {
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--color-white);
+  }
+}
+.hero .content .description {
+  margin-bottom: 52px;
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  .hero .content .description {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+@media (max-width: 420px) {
+  .hero .content .description {
+    margin-bottom: 100vw;
+    font-size: 14px;
+    line-height: 14px;
+    color: var(--color-white);
+  }
+}
+.hero .content .link {
+  display: block;
+  padding: 24px 14px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  outline: transparent;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.hero .content .link:hover, .hero .content .link:focus {
+  background-color: var(--color-green-2);
+}
+.hero .content .link:active {
+  background-color: var(--color-green-2);
+  color: var(--color-white-30);
+}
+@media (max-width: 420px) {
+  .hero .content .link {
+    width: 280px;
+  }
+}
+.hero-background-cat {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/images/cat.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+@media (max-width: 1200px) {
+  .hero-background-cat {
+    display: none;
+  }
+}
+@media (max-width: 420px) {
+  .hero-background-cat {
+    background-image: url(/assets/images/cat-mobile.png);
+    display: block;
+    background-position: top;
+  }
+}
+.hero-background-glass {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/images/glass.png);
+  background-repeat: no-repeat;
+  background-size: 552px;
+  background-position: center bottom;
+}
+@media (max-width: 1200px) {
+  .hero-background-glass {
+    background-position: right bottom;
+    right: 80px;
+  }
+}
+@media (max-width: 992px) {
+  .hero-background-glass {
+    background-size: 452px;
+    right: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-background-glass {
+    background-size: 100%;
+    right: 0;
+  }
+}
+@media (max-width: 576px) {
+  .hero-background-glass {
+    background-size: 280px;
+    background-position: right bottom;
+  }
+}
+@media (max-width: 480px) {
+  .hero-background-glass {
+    background-size: 210px;
+  }
+}
+@media (max-width: 420px) {
+  .hero-background-glass {
+    background-size: 100%;
+    background-position: center 40vw;
+  }
+}
+@media (max-width: 380px) {
+  .hero-background-glass {
+    background-position: center 50vw;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

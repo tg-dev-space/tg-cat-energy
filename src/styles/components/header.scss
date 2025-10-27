@@ -1,0 +1,104 @@
+@use "../variables";
+@use "../mixin";
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+
+  @media (max-width: variables.$desktop-sm) {
+    position: relative;
+  }
+
+  .logo {
+    &-link {
+      display: block;
+
+      outline: transparent;
+      transition: opacity 0.3s ease-in-out;
+
+      &:hover,
+      &:focus {
+        opacity: 0.8;
+      }
+
+      &:active {
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1rem;
+
+    @media (max-width: variables.$tablet-nav) {
+      display: none;
+    }
+
+    &-link {
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+
+      color: var(--color-white);
+
+      outline: transparent;
+      transition: opacity 0.3s ease-in-out;
+
+      @include mixin.font-oswald;
+
+      &:hover,
+      &:focus {
+        opacity: 0.6;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+
+      @media (max-width: variables.$desktop-sm) {
+        color: var(--color-black);
+      }
+
+      &.active {
+        border-bottom: 2px solid var(--color-white);
+
+        @media (max-width: variables.$desktop-sm) {
+          border-bottom: 2px solid var(--color-green);
+        }
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+
+    @media (max-width: variables.$tablet-nav) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+
+      width: 30px;
+      height: 30px;
+    }
+
+    &-line {
+      width: 24px;
+      height: 1.5px;
+
+      background-color: var(--color-black);
+    }
+  }
+}

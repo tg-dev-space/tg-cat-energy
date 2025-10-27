@@ -1,0 +1,22 @@
+@use "variables";
+
+@mixin container {
+  padding: 53px 110px;
+  text-align: center;
+
+  @media (max-width: variables.$desktop-sm) {
+    padding: 42px 30px;
+  }
+
+  @media (max-width: variables.$tablet-md) {
+    padding: 24px 30px;
+  }
+}
+
+@mixin font-oswald {
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,8 +8,43 @@
       href="/assets/images/favicon.ico"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="styles.css" />
     <title>Cat energy</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header container">
+      <div class="header-wrapper">
+        <div class="logo-container">
+          <a href="#" class="logo-link">
+            <img src="/assets/images/logo.svg" alt="Логотип" />
+          </a>
+        </div>
+        <div class="nav-wrapper">
+          <button class="burger" type="button">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </button>
+          <nav class="nav">
+            <a href="#" class="nav-link active">Главная</a>
+            <a href="#" class="nav-link">Каталог продукции</a>
+            <a href="#" class="nav-link">Подбор программы</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero container">
+        <div class="content">
+          <h1 class="title">Функциональное питание для котов</h1>
+          <p class="description">Занялся собой? Займись котом!</p>
+          <a href="#" role="button" class="link">подобрать программу</a>
+        </div>
+        <div class="hero-background-cat"></div>
+        <div class="hero-background-glass"></div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
   <script type="module" src="index.js"></script>
 </html>
