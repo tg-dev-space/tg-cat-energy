@@ -17,7 +17,7 @@ The project represents an adaptive landing page for "Cat energy".
 
 ## 🌐 Deployment
 
-Project deployed on GitHub Pages: [tg-cat-energy](https://github.com/tg-dev-space/tg-cat-energy/)
+Project deployed on GitHub Pages: [deploy](https://tg-dev-space.github.io/tg-cat-energy/)
 
 ## 👨‍💻 Developer
 
