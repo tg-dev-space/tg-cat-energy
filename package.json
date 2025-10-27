@@ -1,0 +1,26 @@
+{
+  "name": "tg-cat-energy",
+  "version": "1.0.0",
+  "description": "The project represents an adaptive landing page for \"Cat energy\".",
+  "main": "index.js",
+  "scripts": {
+    "sass:build": "sass src/styles/styles.scss styles.css",
+    "sass:watch": "sass --watch src/styles/styles.scss styles.css",
+    "sass:build-prod": "sass src/styles/styles.scss styles.css --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tg-dev-space/tg-cat-energy.git"
+  },
+  "keywords": [
+    "cat",
+    "cats"
+  ],
+  "author": "tg-dev-space",
+  "license": "ISC",
+  "type": "commonjs",
+  "homepage": "https://github.com/tg-dev-space/tg-cat-energy#readme",
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}
