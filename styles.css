@@ -652,6 +652,12 @@ body {
   line-height: 60px;
   text-align: left;
 }
+@media (max-width: 576px) {
+  .steps .title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
 .steps .list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -665,18 +671,39 @@ body {
     column-gap: 137px;
   }
 }
+@media (max-width: 576px) {
+  .steps .list {
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    margin-bottom: 30px;
+  }
+}
 .steps .item {
   position: relative;
   min-height: 280px;
   padding-top: 40px;
 }
+@media (max-width: 576px) {
+  .steps .item {
+    display: flex;
+    gap: 20px;
+    min-height: 60px;
+    padding-top: 0;
+  }
+}
 .steps .icon {
   width: 80px;
   height: 80px;
   margin-bottom: 31px;
+  flex-shrink: 0;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--color-green);
+}
+@media (max-width: 576px) {
+  .steps .icon {
+    margin-bottom: 0;
+  }
 }
 .steps .icon--leaf {
   background-image: url("/assets/images/icon_leaf.svg");
@@ -703,6 +730,11 @@ body {
   font-size: 280px;
   line-height: 280px;
   color: var(--color-grey);
+}
+@media (max-width: 576px) {
+  .steps .step {
+    display: none;
+  }
 }
 .steps .description {
   text-align: left;
