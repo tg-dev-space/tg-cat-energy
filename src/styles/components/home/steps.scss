@@ -63,6 +63,8 @@
     background-color: var(--color-green);
 
     @media (max-width: variables.$tablet-sm) {
+      width: 60px;
+      height: 60px;
       margin-bottom: 0;
     }
 
@@ -101,5 +103,11 @@
 
   .description {
     text-align: left;
+    color: var(--color-dark-grey);
+
+    @media (max-width: variables.$tablet-sm) {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 }
