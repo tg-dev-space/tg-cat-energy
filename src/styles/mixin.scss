@@ -11,6 +11,10 @@
   @media (max-width: variables.$tablet-md) {
     padding: 24px 30px;
   }
+
+  @media (max-width: variables.$mobile-lg) {
+    padding: 20px 22px;
+  }
 }
 
 @mixin font-oswald {
