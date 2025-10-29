@@ -11,6 +11,9 @@
   --color-white-30: #ffffff30;
   --color-green: #68b738;
   --color-green-2: #5eaa2f;
+  --color-grey: #f2f2f2;
+  --color-dark-grey: #444444;
+  --color-light-grey: #d9d9d9;
 }
 
 html {
@@ -78,6 +81,8 @@ body {
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .container {
@@ -369,6 +374,254 @@ body {
 @media (max-width: 380px) {
   .hero-background-glass {
     background-position: center 50vw;
+  }
+}
+
+@media (max-width: 576px) {
+  .nutrition-programs {
+    padding-top: 70px;
+  }
+}
+@media (max-width: 420px) {
+  .nutrition-programs {
+    padding-top: 10px;
+  }
+}
+.nutrition-programs .list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+}
+@media (max-width: 1028px) {
+  .nutrition-programs .list {
+    grid-template-columns: 1fr;
+  }
+}
+.nutrition-programs .item {
+  position: relative;
+  padding: 50px;
+  background-color: var(--color-grey);
+}
+@media (max-width: 1260px) {
+  .nutrition-programs .item {
+    padding: 40px;
+  }
+}
+@media (max-width: 1028px) {
+  .nutrition-programs .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+  }
+}
+@media (max-width: 760px) {
+  .nutrition-programs .item {
+    padding: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .nutrition-programs .item {
+    padding: 22px;
+  }
+}
+.nutrition-programs .item-content {
+  max-width: 570px;
+  text-align: left;
+}
+@media (max-width: 760px) {
+  .nutrition-programs .item-content {
+    max-width: 100%;
+  }
+}
+.nutrition-programs .item-content hr {
+  display: none;
+  border: none;
+  height: 1px;
+  background-color: var(--color-light-grey);
+  margin: 20px 0;
+}
+@media (max-width: 576px) {
+  .nutrition-programs .item-content hr {
+    display: block;
+  }
+}
+.nutrition-programs .title {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  padding-left: 170px;
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 36px;
+}
+@media (max-width: 1260px) {
+  .nutrition-programs .title {
+    padding-left: 0;
+  }
+}
+@media (max-width: 1028px) {
+  .nutrition-programs .title {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 760px) {
+  .nutrition-programs .title {
+    margin-bottom: 60px;
+    padding-left: 170px;
+  }
+}
+@media (max-width: 576px) {
+  .nutrition-programs .title {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding-left: 100px;
+    font-size: 24px;
+    line-height: 37px;
+  }
+}
+.nutrition-programs .description {
+  margin-bottom: 23px;
+}
+@media (max-width: 576px) {
+  .nutrition-programs .description {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .nutrition-programs .description {
+    color: var(--color-dark-grey);
+  }
+}
+.nutrition-programs .link {
+  display: flex;
+  align-items: center;
+  outline: transparent;
+}
+.nutrition-programs .link:hover .link-arrow--line, .nutrition-programs .link:focus .link-arrow--line {
+  transition: width 0.3s ease-in-out;
+  width: 26px;
+}
+.nutrition-programs .link:active, .nutrition-programs .link:active {
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.3;
+}
+.nutrition-programs .link-content {
+  margin-right: 20px;
+  font-family: "Oswald";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  line-height: 100%;
+}
+.nutrition-programs .link-arrow--line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  transform: translateY(-0.5px);
+  background-color: var(--color-black);
+}
+.nutrition-programs .link-arrow--tip {
+  width: 12px;
+  height: 9px;
+  background-image: url("/assets/images/tip.png");
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.nutrition-programs .image {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+@media (max-width: 1260px) {
+  .nutrition-programs .image {
+    right: 40px;
+  }
+}
+@media (max-width: 1028px) {
+  .nutrition-programs .image {
+    position: relative;
+    top: 0;
+    right: 0;
+    flex-shrink: 0;
+    background-position: right;
+  }
+}
+@media (max-width: 760px) {
+  .nutrition-programs .image {
+    position: absolute;
+  }
+}
+.nutrition-programs .image--cat-back {
+  top: 35px;
+  width: 100px;
+  height: 106px;
+  background-image: url("/assets/images/cat_back.svg");
+}
+@media (max-width: 1260px) {
+  .nutrition-programs .image--cat-back {
+    top: 25px;
+  }
+}
+@media (max-width: 1028px) {
+  .nutrition-programs .image--cat-back {
+    top: 0;
+    width: 200px;
+    height: 211px;
+  }
+}
+@media (max-width: 760px) {
+  .nutrition-programs .image--cat-back {
+    top: 25px;
+    left: 25px;
+    width: 100px;
+    height: 106px;
+  }
+}
+@media (max-width: 576px) {
+  .nutrition-programs .image--cat-back {
+    width: 50px;
+    height: 53px;
+  }
+}
+.nutrition-programs .image--cat-back-2 {
+  top: 40px;
+  width: 134px;
+  height: 100px;
+  background-image: url("/assets/images/cat_back_2.svg");
+}
+@media (max-width: 1260px) {
+  .nutrition-programs .image--cat-back-2 {
+    top: 30px;
+  }
+}
+@media (max-width: 1028px) {
+  .nutrition-programs .image--cat-back-2 {
+    top: 0;
+    width: 268px;
+    height: 200px;
+  }
+}
+@media (max-width: 760px) {
+  .nutrition-programs .image--cat-back-2 {
+    top: 25px;
+    left: 25px;
+    width: 134px;
+    height: 100px;
+  }
+}
+@media (max-width: 576px) {
+  .nutrition-programs .image--cat-back-2 {
+    width: 67px;
+    height: 50px;
   }
 }
 
