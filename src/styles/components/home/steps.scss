@@ -1,0 +1,76 @@
+@use "../../variables";
+@use "../../mixin";
+
+.steps {
+  border-bottom: 1px solid var(--color-grey-border);
+
+  .title {
+    margin-bottom: 32px;
+
+    @include mixin.font-oswald;
+    font-size: 60px;
+    line-height: 60px;
+    text-align: left;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: start;
+    column-gap: 70px;
+    row-gap: 37px;
+
+    @media (max-width: variables.$desktop-md) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 137px;
+    }
+  }
+
+  .item {
+    position: relative;
+    min-height: 280px;
+    padding-top: 40px;
+  }
+
+  .icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 31px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--color-green);
+
+    &--leaf {
+      background-image: url("/assets/images/icon_leaf.svg");
+    }
+
+    &--tub {
+      background-image: url("/assets/images/icon_tub.svg");
+    }
+
+    &--eat {
+      background-image: url("/assets/images/icon_eat.svg");
+    }
+
+    &--alarm {
+      background-image: url("/assets/images/icon_alarm.svg");
+    }
+  }
+
+  .step {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    @include mixin.font-oswald;
+    font-size: 280px;
+    line-height: 280px;
+    color: var(--color-grey);
+  }
+
+  .description {
+    text-align: left;
+  }
+}
