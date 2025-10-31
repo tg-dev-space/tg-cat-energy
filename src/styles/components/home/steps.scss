@@ -1,18 +1,14 @@
-@use "../../variables";
-@use "../../mixin";
+@use '../../variables';
+@use '../../mixin';
 
 .steps {
-  @media (max-width: variables.$desktop-md) {
-    border-bottom: 1px solid var(--color-grey-border);
-  }
-
   .title {
     margin-bottom: 32px;
-
-    @include mixin.font-oswald;
     font-size: 60px;
     line-height: 60px;
     text-align: left;
+
+    @include mixin.font-oswald;
 
     @media (max-width: variables.$tablet-sm) {
       font-size: 36px;
@@ -23,9 +19,8 @@
   .list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 37px 70px;
     justify-items: start;
-    column-gap: 70px;
-    row-gap: 37px;
 
     @media (max-width: variables.$desktop-md) {
       grid-template-columns: repeat(2, 1fr);
@@ -53,48 +48,47 @@
   }
 
   .icon {
+    flex-shrink: 0;
     width: 80px;
     height: 80px;
     margin-bottom: 31px;
-    flex-shrink: 0;
-
+    background-color: var(--color-green);
     background-repeat: no-repeat;
     background-position: center;
-    background-color: var(--color-green);
+
+    &--leaf {
+      background-image: url('/src/assets/images/icon_leaf.svg');
+    }
+
+    &--tub {
+      background-image: url('/src/assets/images/icon_tub.svg');
+    }
+
+    &--eat {
+      background-image: url('/src/assets/images/icon_eat.svg');
+    }
+
+    &--alarm {
+      background-image: url('/src/assets/images/icon_alarm.svg');
+    }
 
     @media (max-width: variables.$tablet-sm) {
       width: 60px;
       height: 60px;
       margin-bottom: 0;
     }
-
-    &--leaf {
-      background-image: url("/assets/images/icon_leaf.svg");
-    }
-
-    &--tub {
-      background-image: url("/assets/images/icon_tub.svg");
-    }
-
-    &--eat {
-      background-image: url("/assets/images/icon_eat.svg");
-    }
-
-    &--alarm {
-      background-image: url("/assets/images/icon_alarm.svg");
-    }
   }
 
   .step {
     position: absolute;
+    z-index: -1;
     top: 0;
     right: 0;
-    z-index: -1;
-
-    @include mixin.font-oswald;
     font-size: 280px;
     line-height: 280px;
     color: var(--color-grey);
+
+    @include mixin.font-oswald;
 
     @media (max-width: variables.$tablet-sm) {
       display: none;
@@ -102,12 +96,16 @@
   }
 
   .description {
-    text-align: left;
     color: var(--color-dark-grey);
+    text-align: left;
 
     @media (max-width: variables.$tablet-sm) {
       font-size: 14px;
       line-height: 18px;
     }
+  }
+
+  @media (max-width: variables.$desktop-md) {
+    border-bottom: 1px solid var(--color-grey-border);
   }
 }

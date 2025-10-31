@@ -4,9 +4,14 @@
   "description": "The project represents an adaptive landing page for \"Cat energy\".",
   "main": "index.js",
   "scripts": {
-    "sass:build": "sass src/styles/styles.scss styles.css",
-    "sass:watch": "sass --watch src/styles/styles.scss styles.css",
-    "sass:build-prod": "sass src/styles/styles.scss styles.css --style=compressed"
+    "dev": "webpack serve --config webpack.config.js",
+    "build": "webpack --config webpack.config.js --mode=production",
+    "build:dev": "webpack --config webpack.config.js --mode=development",
+    "format": "prettier --write . --ignore-unknown",
+    "lint": "eslint . --ext .ts",
+    "lint:css": "stylelint --fix \"**/*.css\"",
+    "lint:scss": "stylelint --fix \"**/*.scss\"",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -18,9 +23,52 @@
   ],
   "author": "tg-dev-space",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "homepage": "https://github.com/tg-dev-space/tg-cat-energy#readme",
   "devDependencies": {
-    "sass": "^1.93.2"
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@stylistic/stylelint-plugin": "^4.0.0",
+    "@types/webpack-env": "^1.18.8",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^13.0.1",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-unicorn": "^62.0.0",
+    "html-webpack-plugin": "^5.6.4",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "mini-css-extract-plugin": "^2.9.4",
+    "prettier": "^3.6.2",
+    "sass": "^1.93.2",
+    "sass-loader": "^16.0.6",
+    "style-loader": "^4.0.0",
+    "stylelint": "^16.25.0",
+    "stylelint-config-clean-order": "^7.0.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "stylelint-order": "^7.0.0",
+    "stylelint-scss": "^6.12.1",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "npm run format",
+      "npm run lint"
+    ],
+    "*.{css,scss}": [
+      "npm run format",
+      "npm run lint:css",
+      "npm run lint:scss"
+    ]
   }
 }

@@ -1,6 +1,6 @@
-@use "global.scss";
-@use "./components/header.scss";
-@use "./components/home/hero.scss";
-@use "./components/home/nutrition-programs.scss";
-@use "./components/home/steps.scss";
-@use "./components/home/results.scss";
+@use 'global';
+@use './components/header';
+@use './components/home/hero';
+@use './components/home/nutrition-programs';
+@use './components/home/steps';
+@use './components/home/results';

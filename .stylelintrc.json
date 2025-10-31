@@ -1,0 +1,14 @@
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "color-hex-length": "short",
+    "block-no-empty": true,
+    "max-nesting-depth": null,
+    "media-query-no-invalid": null,
+    "no-descending-specificity": null,
+    "no-duplicate-selectors": null,
+    "no-invalid-position-declaration": null,
+    "selector-class-pattern": null,
+    "font-family-no-missing-generic-family-keyword": null
+  }
+}

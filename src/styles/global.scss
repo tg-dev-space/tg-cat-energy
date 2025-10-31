@@ -1,21 +1,21 @@
-@use "mixin";
+@use 'mixin';
 
 @font-face {
-  font-family: "Oswald";
-  src: url("/assets/fonts/Oswald-Regular.ttf") format("truetype");
+  font-family: Oswald;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+  src: url('/src/assets/fonts/Oswald-Regular.ttf') format('truetype');
 }
 
 :root {
-  --color-black: #000000;
-  --color-white: #ffffff;
+  --color-black: #000;
+  --color-white: #fff;
   --color-white-30: #ffffff30;
   --color-green: #68b738;
   --color-green-2: #5eaa2f;
   --color-grey: #f2f2f2;
-  --color-dark-grey: #444444;
+  --color-dark-grey: #444;
   --color-light-grey: #d9d9d9;
   --color-grey-border: #e6e6e6;
   --color-grey-background: #eaeaea;
@@ -85,14 +85,12 @@ input {
 body {
   position: relative;
   overflow-x: hidden;
-
-  max-width: 1440px;
   min-width: 320px;
+  max-width: 1440px;
   margin: 0 auto;
-
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
   font-size: 16px;
+  font-weight: 400;
   line-height: 24px;
 }
 

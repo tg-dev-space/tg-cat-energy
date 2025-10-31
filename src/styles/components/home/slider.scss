@@ -1,5 +1,5 @@
-@use "../../variables";
-@use "../../mixin";
+@use '../../variables';
+@use '../../mixin';
 
 .results-slider {
   position: absolute;
@@ -8,16 +8,6 @@
   width: 690px;
   height: 656px;
 
-  @media (max-width: variables.$desktop-md) {
-    position: relative;
-    right: 0;
-  }
-
-  @media (max-width: variables.$tablet-slider) {
-    width: 311px;
-    height: 388px;
-  }
-
   .images {
     position: absolute;
     top: 0;
@@ -25,11 +15,6 @@
     display: flex;
     width: 690px;
     height: 500px;
-
-    @media (max-width: variables.$tablet-slider) {
-      width: 311px;
-      height: 232px;
-    }
 
     .slide {
       position: absolute;
@@ -53,51 +38,87 @@
         }
       }
     }
+
+    @media (max-width: variables.$tablet-slider) {
+      width: 311px;
+      height: 232px;
+    }
   }
 
   .controller {
     position: absolute;
-    bottom: 60px;
     right: 70px;
-
+    bottom: 60px;
     display: flex;
+    gap: 10px;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
-
     width: 100%;
     height: 40px;
 
-    @media (max-width: variables.$tablet-slider) {
-      right: 8px;
-    }
-
-    @media (max-width: variables.$tablet-sm) {
-      right: 0;
-      justify-content: center;
-    }
-
     &-input--results {
-      appearance: none;
-      -webkit-appearance: none;
-
       cursor: pointer;
       order: 2;
-
       width: 100%;
       max-width: 428px;
       height: 6px;
       border-radius: 6px;
-
+      appearance: none;
       background-color: var(--color-grey-track);
 
-      @media (max-width: variables.$tablet-sm) {
-        max-width: 84px;
-        height: 14px;
-        border: 1px solid var(--color-special-grey);
-        background-color: var(--color-white);
+      &::-webkit-slider-runnable-track {
+        cursor: pointer;
+        width: 100%;
+        height: 6px;
+        border: 0;
+        border-radius: 6px;
+        background-color: var(--color-grey-track);
 
-        padding: 3px;
+        @media (max-width: variables.$tablet-sm) {
+          max-width: 50%;
+          background-color: var(--color-green);
+        }
+      }
+
+      &::-moz-range-track {
+        cursor: pointer;
+        width: 100%;
+        height: 6px;
+        border: 0;
+        border-radius: 6px;
+        background-color: var(--color-grey-track);
+
+        @media (max-width: variables.$tablet-sm) {
+          max-width: 84px;
+          height: 14px;
+          background-color: var(--color-white);
+        }
+      }
+
+      &::-webkit-slider-thumb {
+        cursor: pointer;
+        width: 34px;
+        height: 34px;
+        margin-top: -14px;
+        border: 1px solid var(--color-special-grey);
+        border-radius: 50%;
+        appearance: none;
+        background: var(--color-white) radial-gradient(circle, var(--color-green) 4px, transparent 4px);
+        box-shadow: 0 1px 3px #00000029;
+
+        @media (max-width: variables.$tablet-sm) {
+          display: none;
+        }
+      }
+
+      &::-moz-range-thumb {
+        cursor: pointer;
+        width: 34px;
+        height: 34px;
+        border: 1px solid var(--color-special-grey);
+        border-radius: 50%;
+        background: var(--color-white) radial-gradient(circle, var(--color-green) 4px, transparent 4px);
+        box-shadow: 0 1px 3px #00000029;
       }
 
       &:hover {
@@ -128,89 +149,43 @@
         }
       }
 
-      &::-webkit-slider-runnable-track {
-        cursor: pointer;
-
-        width: 100%;
-        height: 6px;
-        border: 0;
-        border-radius: 6px;
-
-        background-color: var(--color-grey-track);
-
-        @media (max-width: variables.$tablet-sm) {
-          max-width: 50%;
-          background-color: var(--color-green);
-        }
-      }
-
-      &::-moz-range-track {
-        cursor: pointer;
-
-        width: 100%;
-        height: 6px;
-        border: 0;
-        border-radius: 6px;
-
-        background-color: var(--color-grey-track);
-
-        @media (max-width: variables.$tablet-sm) {
-          max-width: 84px;
-          height: 14px;
-          background-color: var(--color-white);
-        }
-      }
-
-      &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        cursor: pointer;
-
-        margin-top: -14px;
-        border: 1px solid var(--color-special-grey);
-        height: 34px;
-        width: 34px;
-        border-radius: 50%;
-
-        box-shadow: 0px 1px 3px #00000029;
-        background: var(--color-white)
-          radial-gradient(circle, var(--color-green) 4px, transparent 4px);
-
-        @media (max-width: variables.$tablet-sm) {
-          display: none;
-        }
-      }
-
-      &::-moz-range-thumb {
-        border: 1px solid var(--color-special-grey);
-        height: 34px;
-        width: 34px;
-        border-radius: 50%;
-
-        box-shadow: 0px 1px 3px #00000029;
-        background: var(--color-white)
-          radial-gradient(circle, var(--color-green) 4px, transparent 4px);
-        cursor: pointer;
-      }
-
       &:focus::-webkit-slider-thumb,
       &:active::-webkit-slider-thumb {
-        outline: none;
         border: 1px solid var(--color-green);
+        outline: none;
         transition: border 0.3s ease-in-out;
       }
 
       &:focus::-moz-range-thumb,
       &:active::-webkit-slider-thumb {
-        outline: none;
         border: 1px solid var(--color-green);
+        outline: none;
         transition: border 0.3s ease-in-out;
       }
+
+      @media (max-width: variables.$tablet-sm) {
+        max-width: 84px;
+        height: 14px;
+        padding: 3px;
+        border: 1px solid var(--color-special-grey);
+        background-color: var(--color-white);
+      }
+    }
+
+    @media (max-width: variables.$tablet-slider) {
+      right: 8px;
+    }
+
+    @media (max-width: variables.$tablet-sm) {
+      right: 0;
+      justify-content: center;
     }
   }
 
   .label {
     padding-bottom: 5px;
     border-bottom: 1px dotted var(--color-special-grey);
+
     @include mixin.font-oswald;
 
     &--before {
@@ -229,5 +204,15 @@
     @media (max-width: variables.$tablet-sm) {
       border-bottom: 0;
     }
+  }
+
+  @media (max-width: variables.$desktop-md) {
+    position: relative;
+    right: 0;
+  }
+
+  @media (max-width: variables.$tablet-slider) {
+    width: 311px;
+    height: 388px;
   }
 }

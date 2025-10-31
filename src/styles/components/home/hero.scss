@@ -1,65 +1,37 @@
-@use "../../variables";
-@use "../../mixin";
+@use '../../variables';
+@use '../../mixin';
 
 .hero {
   position: relative;
 
-  @media (max-width: variables.$mobile-md) {
-    display: flex;
-    justify-content: center;
-  }
-
   .content {
     position: relative;
     z-index: 9;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     max-width: 414px;
     margin: 115px 80px;
 
-    @media (max-width: variables.$desktop-sm) {
-      margin: 40px 80px;
-    }
-
-    @media (max-width: variables.$tablet-md) {
-      margin: 0px 80px calc(570px - (variables.$tablet-md - 100vw) * 0.5) 80px;
-    }
-
-    @media (max-width: variables.$tablet-sm) {
-      max-width: 249px;
-      margin: 0 0 calc(20px - (variables.$tablet-sm - 100vw) * 0.5);
-    }
-
-    @media (max-width: variables.$mobile-md) {
-      align-items: center;
-      max-width: 100%;
-      margin: 0;
-    }
-
     .title {
       margin-bottom: 40px;
-
-      @include mixin.font-oswald;
       font-size: 60px;
       line-height: 60px;
-      text-transform: none;
       text-align: left;
+      text-transform: none;
+
+      @include mixin.font-oswald;
 
       @media (max-width: variables.$mobile-lg) {
         margin-bottom: 25px;
-
         font-size: 32px;
         line-height: 32px;
       }
 
       @media (max-width: variables.$mobile-md) {
         margin-bottom: 25px;
-
-        text-align: center;
         color: var(--color-white);
+        text-align: center;
       }
     }
 
@@ -75,10 +47,8 @@
 
       @media (max-width: variables.$mobile-md) {
         margin-bottom: 100vw;
-
         font-size: 14px;
         line-height: 14px;
-
         color: var(--color-white);
       }
     }
@@ -86,12 +56,12 @@
     .link {
       display: block;
       padding: 24px 14px;
-
       color: var(--color-white);
       background-color: var(--color-green);
-
       outline: transparent;
-      transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+      transition:
+        color 0.3s ease-in-out,
+        background-color 0.3s ease-in-out;
 
       @include mixin.font-oswald;
 
@@ -101,13 +71,32 @@
       }
 
       &:active {
-        background-color: var(--color-green-2);
         color: var(--color-white-30);
+        background-color: var(--color-green-2);
       }
 
       @media (max-width: variables.$mobile-md) {
         width: 280px;
       }
+    }
+
+    @media (max-width: variables.$desktop-sm) {
+      margin: 40px 80px;
+    }
+
+    @media (max-width: variables.$tablet-md) {
+      margin: 0 80px calc(570px - (variables.$tablet-md - 100vw) * 0.5) 80px;
+    }
+
+    @media (max-width: variables.$tablet-sm) {
+      max-width: 249px;
+      margin: 0 0 calc(20px - (variables.$tablet-sm - 100vw) * 0.5);
+    }
+
+    @media (max-width: variables.$mobile-md) {
+      align-items: center;
+      max-width: 100%;
+      margin: 0;
     }
   }
 
@@ -115,22 +104,20 @@
     position: absolute;
     top: 0;
     right: 0;
-
     width: 100%;
     height: 100%;
-
-    background-image: url(/assets/images/cat.png);
+    background-image: url('/src/assets/images/cat.png');
     background-repeat: no-repeat;
-    background-size: contain;
     background-position: right;
+    background-size: contain;
 
     @media (max-width: variables.$desktop-sm) {
       display: none;
     }
 
     @media (max-width: variables.$mobile-md) {
-      background-image: url(/assets/images/cat-mobile.png);
       display: block;
+      background-image: url('/src/assets/images/cat-mobile.png');
       background-position: top;
     }
   }
@@ -138,33 +125,31 @@
   &-background-glass {
     position: absolute;
     top: 0;
-
     width: 100%;
     height: 100%;
-
-    background-image: url(/assets/images/glass.png);
+    background-image: url('/src/assets/images/glass.png');
     background-repeat: no-repeat;
-    background-size: 552px;
     background-position: center bottom;
+    background-size: 552px;
 
     @media (max-width: variables.$desktop-sm) {
-      background-position: right bottom;
       right: 80px;
+      background-position: right bottom;
     }
 
     @media (max-width: variables.$tablet-lg) {
-      background-size: 452px;
       right: 40px;
+      background-size: 452px;
     }
 
     @media (max-width: variables.$tablet-md) {
-      background-size: 100%;
       right: 0;
+      background-size: 100%;
     }
 
     @media (max-width: variables.$tablet-sm) {
-      background-size: 280px;
       background-position: right bottom;
+      background-size: 280px;
     }
 
     @media (max-width: variables.$mobile-lg) {
@@ -172,12 +157,17 @@
     }
 
     @media (max-width: variables.$mobile-md) {
-      background-size: 100%;
       background-position: center 40vw;
+      background-size: 100%;
     }
 
     @media (max-width: variables.$mobile-sm) {
       background-position: center 50vw;
     }
+  }
+
+  @media (max-width: variables.$mobile-md) {
+    display: flex;
+    justify-content: center;
   }
 }

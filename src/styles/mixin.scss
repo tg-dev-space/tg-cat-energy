@@ -1,4 +1,4 @@
-@use "variables";
+@use 'variables';
 
 @mixin container {
   padding: 53px 110px;
@@ -18,9 +18,9 @@
 }
 
 @mixin font-oswald {
-  font-family: "Oswald";
-  font-weight: 400;
+  font-family: Oswald;
   font-size: 20px;
+  font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
 }
