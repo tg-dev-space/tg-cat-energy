@@ -7,6 +7,18 @@
   color: var(--color-dark-grey);
   background-color: var(--color-grey);
 
+  @media (max-width: variables.$tablet-sm) {
+    flex-direction: column;
+  }
+
+  .separator {
+    display: none;
+
+    @media (max-width: variables.$tablet-sm) {
+      display: block;
+    }
+  }
+
   .link--logo {
     transition: opacity 0.3s ease-in-out;
 

@@ -56,7 +56,7 @@ export default class NutritionProgramsView {
       content: description,
       parent: content,
     });
-    createElement('hr', { parent: content });
+    createElement('hr', { classNames: ['separator'], parent: content });
 
     const link = this.createLink(href, linkContent);
 

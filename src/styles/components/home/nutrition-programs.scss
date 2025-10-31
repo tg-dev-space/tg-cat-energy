@@ -44,10 +44,6 @@
 
     .separator {
       display: none;
-      height: 1px;
-      margin: 20px 0;
-      border: none;
-      background-color: var(--color-light-grey);
 
       @media (max-width: variables.$tablet-sm) {
         display: block;
@@ -222,6 +218,7 @@
     }
 
     @media (max-width: variables.$tablet-nav) {
+      top: 25px;
       position: absolute;
     }
   }
