@@ -183,10 +183,10 @@
   }
 
   .label {
+    @include mixin.font-oswald;
+
     padding-bottom: 5px;
     border-bottom: 1px dotted var(--color-special-grey);
-
-    @include mixin.font-oswald;
 
     &--before {
       order: 1;

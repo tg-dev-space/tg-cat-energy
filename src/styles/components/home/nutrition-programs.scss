@@ -42,7 +42,7 @@
     max-width: 570px;
     text-align: left;
 
-    hr {
+    .separator {
       display: none;
       height: 1px;
       margin: 20px 0;
@@ -60,13 +60,13 @@
   }
 
   .title {
+    @include mixin.font-oswald;
+
     margin-top: 20px;
     margin-bottom: 60px;
     padding-left: 170px;
     font-size: 36px;
     line-height: 36px;
-
-    @include mixin.font-oswald;
 
     @media (max-width: variables.$desktop-md) {
       padding-left: 0;
@@ -121,10 +121,10 @@
     }
 
     &-content {
+      @include mixin.font-oswald;
+
       margin-right: 20px;
       line-height: 100%;
-
-      @include mixin.font-oswald;
     }
 
     &-arrow--line {

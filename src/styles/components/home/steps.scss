@@ -3,12 +3,12 @@
 
 .steps {
   .title {
+    @include mixin.font-oswald;
+
     margin-bottom: 32px;
     font-size: 60px;
     line-height: 60px;
     text-align: left;
-
-    @include mixin.font-oswald;
 
     @media (max-width: variables.$tablet-sm) {
       font-size: 36px;
@@ -80,6 +80,8 @@
   }
 
   .step {
+    @include mixin.font-oswald;
+
     position: absolute;
     z-index: -1;
     top: 0;
@@ -87,8 +89,6 @@
     font-size: 280px;
     line-height: 280px;
     color: var(--color-grey);
-
-    @include mixin.font-oswald;
 
     @media (max-width: variables.$tablet-sm) {
       display: none;

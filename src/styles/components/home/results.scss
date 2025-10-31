@@ -24,13 +24,13 @@
   }
 
   .title {
+    @include mixin.font-oswald;
+
     width: 100%;
     margin-bottom: 146px;
     font-size: 60px;
     line-height: 60px;
     text-align: left;
-
-    @include mixin.font-oswald;
 
     @media (max-width: variables.$desktop-md) {
       margin-bottom: 63px;
@@ -178,10 +178,10 @@
   }
 
   .price-wrapper {
+    @include mixin.font-oswald;
+
     display: flex;
     gap: 60px;
-
-    @include mixin.font-oswald;
 
     @media (max-width: variables.$tablet-md) {
       flex-direction: column;

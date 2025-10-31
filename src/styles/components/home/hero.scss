@@ -14,13 +14,13 @@
     margin: 115px 80px;
 
     .title {
+      @include mixin.font-oswald;
+
       margin-bottom: 40px;
       font-size: 60px;
       line-height: 60px;
       text-align: left;
       text-transform: none;
-
-      @include mixin.font-oswald;
 
       @media (max-width: variables.$mobile-lg) {
         margin-bottom: 25px;
@@ -36,9 +36,9 @@
     }
 
     .description {
-      margin-bottom: 52px;
-
       @include mixin.font-oswald;
+
+      margin-bottom: 52px;
 
       @media (max-width: variables.$mobile-lg) {
         font-size: 14px;
@@ -54,6 +54,8 @@
     }
 
     .link {
+      @include mixin.font-oswald;
+
       display: block;
       padding: 24px 14px;
       color: var(--color-white);
@@ -62,8 +64,6 @@
       transition:
         color 0.3s ease-in-out,
         background-color 0.3s ease-in-out;
-
-      @include mixin.font-oswald;
 
       &:hover,
       &:focus {

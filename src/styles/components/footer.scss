@@ -1,0 +1,95 @@
+@use '../variables';
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-dark-grey);
+  background-color: var(--color-grey);
+
+  .link--logo {
+    transition: opacity 0.3s ease-in-out;
+
+    &:focus,
+    &:hover {
+      outline: transparent;
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  .social-links-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .link {
+      width: 40px;
+      height: 40px;
+      background-color: var(--color-grey-2);
+      mask-repeat: no-repeat;
+      mask-position: center;
+      transition:
+        background-color 0.3s ease-in-out,
+        opacity 0.3s ease-in-out;
+
+      &:focus,
+      &:hover {
+        outline: transparent;
+        background-color: var(--color-green);
+      }
+
+      &:active {
+        opacity: 0.3;
+        background-color: var(--color-green);
+      }
+
+      &--vk {
+        mask-image: url('/src/assets/images/icon_vkontakte.svg');
+      }
+
+      &--instagram {
+        mask-image: url('/src/assets/images/icon_instagram.svg');
+      }
+
+      &--facebook {
+        mask-image: url('/src/assets/images/icon_facebook.svg');
+      }
+    }
+  }
+
+  .link--company {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: opacity 0.3s ease-in-out;
+
+    .icon {
+      display: block;
+      width: 27px;
+      height: 34px;
+      background-color: var(--color-grey-2);
+      mask-image: url('/src/assets/images/company.svg');
+      mask-repeat: no-repeat;
+      mask-position: right;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:focus .icon,
+    &:hover .icon {
+      outline: transparent;
+      background-color: var(--color-green);
+    }
+
+    &:active {
+      opacity: 0.3;
+
+      .icon {
+        background-color: var(--color-green);
+      }
+    }
+  }
+}
