@@ -1,3 +1,4 @@
+import HeaderController from './header-controller';
 import HeaderView from './header-view';
 
 export default class Header {
@@ -9,6 +10,7 @@ export default class Header {
 
   public render(): HTMLElement {
     const headerElement = this.view.render();
+    new HeaderController(this.view);
     return headerElement;
   }
 }

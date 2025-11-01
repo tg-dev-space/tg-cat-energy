@@ -1,15 +1,26 @@
 import Footer from './components/footer';
 import Header from './components/header';
-import HomePage from './components/pages/home';
+import { Router } from './router';
+import { createElement } from './utils/create-element';
 
-export default class App {
-  constructor() {}
+class App {
+  public readonly route: Router;
+  public readonly main: HTMLElement;
+
+  constructor() {
+    this.main = createElement('main');
+    this.route = new Router(this.main);
+  }
 
   public build(): void {
     const header = new Header().render();
-    const homePage = new HomePage().render();
     const footer = new Footer().render();
 
-    document.body.append(header, homePage, footer);
+    document.body.append(header, this.main, footer);
   }
 }
+
+const app: App = new App();
+export const route = app.route;
+
+app.build();

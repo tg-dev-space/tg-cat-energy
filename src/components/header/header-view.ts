@@ -2,6 +2,10 @@ import { createElement } from '../../utils/create-element';
 import logo from '../../assets/images/logo.svg';
 
 export default class HeaderView {
+  public readonly homeLink: HTMLAnchorElement;
+  public readonly catalogLink: HTMLAnchorElement;
+  public readonly programsLink: HTMLAnchorElement;
+  public readonly nav: HTMLElement;
   private readonly header: HTMLElement;
   private readonly headerWrapper: HTMLElement;
   private readonly buttonBurger: HTMLButtonElement;
@@ -10,6 +14,27 @@ export default class HeaderView {
     this.header = createElement('header', { classNames: ['header', 'container'] });
     this.headerWrapper = createElement('div', { classNames: ['header-wrapper'], parent: this.header });
     this.buttonBurger = createElement('button', { classNames: ['burger'], attributes: { type: 'button' } });
+    this.nav = createElement('nav', {
+      classNames: ['nav'],
+    });
+    this.homeLink = createElement('a', {
+      classNames: ['nav-link', 'active'],
+      content: 'Главная',
+      attributes: { href: '/' },
+      parent: this.nav,
+    });
+    this.catalogLink = createElement('a', {
+      classNames: ['nav-link'],
+      content: 'Каталог продукции',
+      attributes: { href: '/catalog' },
+      parent: this.nav,
+    });
+    this.programsLink = createElement('a', {
+      classNames: ['nav-link'],
+      attributes: { href: '/programs' },
+      content: 'Подбор программы',
+      parent: this.nav,
+    });
   }
 
   public render(): HTMLElement {
@@ -18,6 +43,10 @@ export default class HeaderView {
 
     return this.header;
   }
+
+  public getNavLinks = (): HTMLAnchorElement[] => {
+    return [this.homeLink, this.catalogLink, this.programsLink];
+  };
 
   private createLogo(): void {
     const logoContainer = createElement('div', { classNames: ['logo-container'], parent: this.headerWrapper });
@@ -43,28 +72,6 @@ export default class HeaderView {
       });
     }
 
-    const nav = createElement('nav', {
-      classNames: ['nav'],
-      parent: navWrapper,
-    });
-
-    createElement('a', {
-      classNames: ['nav-link', 'active'],
-      content: 'Главная',
-      attributes: { href: '/' },
-      parent: nav,
-    });
-    createElement('a', {
-      classNames: ['nav-link'],
-      content: 'Каталог продукции',
-      attributes: { href: '/catalog' },
-      parent: nav,
-    });
-    createElement('a', {
-      classNames: ['nav-link'],
-      attributes: { href: '/programs' },
-      content: 'Подбор программы',
-      parent: nav,
-    });
+    navWrapper.append(this.nav);
   }
 }

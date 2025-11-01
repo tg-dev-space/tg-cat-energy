@@ -1,10 +1,6 @@
-interface Attributes {
-  [key: string]: string;
-}
-
 interface ElementParameters {
   classNames?: string[];
-  attributes?: Attributes;
+  attributes?: Record<string, string>;
   content?: string;
   parent?: HTMLElement;
 }
@@ -27,9 +23,7 @@ export const createElement = <T extends keyof HTMLElementTagNameMap>(
 
   if (attributes) {
     Object.entries(attributes).forEach(([key, value]) => {
-      if (value) {
-        element.setAttribute(key, value);
-      }
+      element.setAttribute(key, value);
     });
   }
 

@@ -1,7 +1,7 @@
 @use '../../variables';
 @use '../../mixin';
 
-.steps {
+.home-page .steps {
   .title {
     @include mixin.font-oswald;
 

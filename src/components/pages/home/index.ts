@@ -21,7 +21,7 @@ export default class HomePage {
   }
 
   public render(): HTMLElement {
-    const main = createElement('main');
+    const wrapper = createElement('div', { classNames: ['home-page'] });
 
     const heroSections = this.heroView.render();
     const nutritionProgramsSections = this.nutritionProgramsView.render();
@@ -29,8 +29,8 @@ export default class HomePage {
     const resultsView = this.resultsView.render();
     const map = this.mapView.render();
 
-    main.append(heroSections, nutritionProgramsSections, stepsSections, resultsView, map);
+    wrapper.append(heroSections, nutritionProgramsSections, stepsSections, resultsView, map);
 
-    return main;
+    return wrapper;
   }
 }
