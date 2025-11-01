@@ -1,8 +1,14 @@
 import { ROUTES } from './constants/route';
 
 export class Router {
+  private onRouteChangeCallbacks: (() => void)[] = [];
+
   constructor(private readonly main: HTMLElement) {
     this.init();
+  }
+
+  public onRouteChange(callback: () => void): void {
+    this.onRouteChangeCallbacks.push(callback);
   }
 
   public navigate = (event: Event): void => {
@@ -20,6 +26,7 @@ export class Router {
   private loadPage(pathname: string): void {
     const Page = ROUTES[pathname] || ROUTES['/'];
     this.main.replaceChildren(new Page().render());
+    this.onRouteChangeCallbacks.forEach((callback) => callback());
   }
 
   private init(): void {

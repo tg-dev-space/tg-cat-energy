@@ -6,7 +6,7 @@ export default class HeaderView {
   public readonly catalogLink: HTMLAnchorElement;
   public readonly programsLink: HTMLAnchorElement;
   public readonly nav: HTMLElement;
-  private readonly header: HTMLElement;
+  public readonly header: HTMLElement;
   private readonly headerWrapper: HTMLElement;
   private readonly buttonBurger: HTMLButtonElement;
 

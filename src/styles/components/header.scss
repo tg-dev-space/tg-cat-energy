@@ -2,11 +2,22 @@
 @use '../mixin';
 
 .header {
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 0;
   width: 100%;
+
+  &.overlay {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+
+    .nav-link {
+      color: var(--color-white);
+
+      &.active {
+        border-bottom: 2px solid var(--color-white);
+      }
+    }
+  }
 
   .logo {
     &-link {
@@ -41,9 +52,9 @@
 
       padding: 0.5rem 0;
       border-bottom: 2px solid transparent;
-      color: var(--color-white);
       outline: transparent;
       transition: opacity 0.3s ease-in-out;
+      color: var(--color-black);
 
       &:hover,
       &:focus {
@@ -55,15 +66,7 @@
       }
 
       &.active {
-        border-bottom: 2px solid var(--color-white);
-
-        @media (max-width: variables.$desktop-sm) {
-          border-bottom: 2px solid var(--color-green);
-        }
-      }
-
-      @media (max-width: variables.$desktop-sm) {
-        color: var(--color-black);
+        border-bottom: 2px solid var(--color-green);
       }
     }
 
@@ -90,9 +93,5 @@
       width: 30px;
       height: 30px;
     }
-  }
-
-  @media (max-width: variables.$desktop-sm) {
-    position: relative;
   }
 }
