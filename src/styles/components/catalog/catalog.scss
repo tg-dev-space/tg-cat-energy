@@ -36,6 +36,10 @@
     gap: 80px;
     color: var(--color-dark-grey);
 
+    @media (max-width: variables.$desktop-lg) {
+      margin-bottom: 70px;
+    }
+
     @media (max-width: variables.$tablet-catalog) {
       grid-template-columns: 1fr;
       gap: 0;
@@ -258,30 +262,10 @@
     }
 
     .button {
-      @include mixin.font-oswald;
-
-      padding: 10px 53px;
-      min-height: 40px;
-      font-size: 16px;
-      color: var(--color-white);
-      background-color: var(--color-green);
-      transition:
-        background-color 0.3s ease-in-out,
-        color 0.3s ease-in-out;
+      @include mixin.green-button;
 
       @media (max-width: variables.$tablet-catalog) {
         grid-area: button;
-      }
-
-      &:focus,
-      &:hover {
-        outline: transparent;
-        background-color: var(--color-green-2);
-      }
-
-      &:active {
-        color: var(--color-white-30);
-        background-color: var(--color-green-2);
       }
     }
   }

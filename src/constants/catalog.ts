@@ -1,4 +1,4 @@
-import { CatalogItem } from '../types/view-components';
+import { CatalogItem, CatalogItemAdditional } from '../types/view-components';
 import chicken from '../assets/images/catalog-chicken.png';
 import fish from '../assets/images/catalog-fish.png';
 import buckwheat from '../assets/images/catalog-buckwheat.png';
@@ -152,4 +152,11 @@ export const CATALOG: CatalogItem[] = [
       },
     ],
   },
+];
+
+export const ADD_PRODUCTS: CatalogItemAdditional[] = [
+  { label: 'Сахарозаменитель', quantity: '1 упаковка (100 г)', price: '200 Р' },
+  { label: 'Питьевая вода', quantity: '5 литров', price: '50 Р' },
+  { label: 'молоко', quantity: '1 литр', price: '100 Р' },
+  { label: 'витамины', quantity: '1 упаковка (30 г)', price: '300 Р' },
 ];

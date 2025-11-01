@@ -34,7 +34,7 @@ export default class CatalogView {
       attributes: { src: data.image.src, alt: data.image.alt },
       parent: item,
     });
-    createElement('h3', {
+    createElement('h4', {
       classNames: ['title'],
       content: data.title,
       parent: item,
@@ -88,7 +88,7 @@ export default class CatalogView {
       parent: plus,
     });
 
-    createElement('h3', {
+    createElement('h4', {
       classNames: ['title'],
       content: 'Показать еще 100500 товаров',
       parent: item,
