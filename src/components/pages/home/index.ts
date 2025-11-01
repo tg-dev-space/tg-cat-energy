@@ -1,4 +1,5 @@
 import { createElement } from '../../../utils/create-element';
+import MapView from '../../map/map-view';
 import HeroView from './view/hero-view';
 import NutritionProgramsView from './view/nutrition-programs';
 import ResultsView from './view/results';
@@ -9,12 +10,14 @@ export default class HomePage {
   private readonly nutritionProgramsView: NutritionProgramsView;
   private readonly stepsView: StepsView;
   private readonly resultsView: ResultsView;
+  private readonly mapView: MapView;
 
   constructor() {
     this.heroView = new HeroView();
     this.nutritionProgramsView = new NutritionProgramsView();
     this.stepsView = new StepsView();
     this.resultsView = new ResultsView();
+    this.mapView = new MapView();
   }
 
   public render(): HTMLElement {
@@ -24,8 +27,9 @@ export default class HomePage {
     const nutritionProgramsSections = this.nutritionProgramsView.render();
     const stepsSections = this.stepsView.render();
     const resultsView = this.resultsView.render();
+    const map = this.mapView.render();
 
-    main.append(heroSections, nutritionProgramsSections, stepsSections, resultsView);
+    main.append(heroSections, nutritionProgramsSections, stepsSections, resultsView, map);
 
     return main;
   }

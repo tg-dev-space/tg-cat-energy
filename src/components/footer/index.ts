@@ -8,7 +8,8 @@ export default class Footer {
   }
 
   public render(): HTMLElement {
-    const headerElement = this.view.render();
-    return headerElement;
+    const footerElement = this.view.render();
+
+    return footerElement;
   }
 }

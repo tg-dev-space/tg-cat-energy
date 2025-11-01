@@ -9,8 +9,12 @@
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
-    "types": ["node", "webpack-env"]
+    "types": ["node", "webpack-env"],
+    "typeRoots": ["./node_modules/@types", "./node_modules/@yandex/ymaps3-types"],
+    "paths": {
+      "ymaps3": ["./node_modules/@yandex/ymaps3-types"]
+    }
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["./src/**/*.ts", "src/constants/map.ts"],
   "exclude": ["node_modules", "dist"]
 }
