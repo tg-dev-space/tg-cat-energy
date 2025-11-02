@@ -7,8 +7,8 @@ export default class HeaderView {
   public readonly programsLink: HTMLAnchorElement;
   public readonly nav: HTMLElement;
   public readonly header: HTMLElement;
+  public readonly buttonBurger: HTMLButtonElement;
   private readonly headerWrapper: HTMLElement;
-  private readonly buttonBurger: HTMLButtonElement;
 
   constructor() {
     this.header = createElement('header', { classNames: ['header', 'container'] });

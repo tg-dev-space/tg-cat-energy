@@ -82,6 +82,19 @@
       width: 24px;
       height: 1.5px;
       background-color: var(--color-black);
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &:focus,
+    &:hover {
+      .burger-line {
+        background-color: var(--color-green);
+      }
+    }
+
+    &:active {
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0.3;
     }
 
     @media (max-width: variables.$tablet-nav) {
@@ -92,6 +105,25 @@
       justify-content: center;
       width: 30px;
       height: 30px;
+    }
+
+    &.open {
+      position: fixed;
+      top: 41.67px;
+      right: 30px;
+      z-index: 101;
+    }
+
+    &.open + .nav {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      padding: 140px 30px 60px;
+      transform: translateX(-200px) translateY(-75px);
+      background-color: var(--color-white);
+      box-shadow: 0 0 15px 8px var(--color-grey);
+      z-index: 100;
     }
   }
 }
