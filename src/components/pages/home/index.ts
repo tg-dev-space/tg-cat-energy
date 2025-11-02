@@ -1,0 +1,36 @@
+import { createElement } from '../../../utils/create-element';
+import MapView from '../../map/map-view';
+import HeroView from './view/hero-view';
+import NutritionProgramsView from './view/nutrition-programs';
+import ResultsView from './view/results';
+import StepsView from './view/steps';
+
+export default class HomePage {
+  private readonly heroView: HeroView;
+  private readonly nutritionProgramsView: NutritionProgramsView;
+  private readonly stepsView: StepsView;
+  private readonly resultsView: ResultsView;
+  private readonly mapView: MapView;
+
+  constructor() {
+    this.heroView = new HeroView();
+    this.nutritionProgramsView = new NutritionProgramsView();
+    this.stepsView = new StepsView();
+    this.resultsView = new ResultsView();
+    this.mapView = new MapView();
+  }
+
+  public render(): HTMLElement {
+    const wrapper = createElement('div', { classNames: ['home-page'] });
+
+    const heroSections = this.heroView.render();
+    const nutritionProgramsSections = this.nutritionProgramsView.render();
+    const stepsSections = this.stepsView.render();
+    const resultsView = this.resultsView.render();
+    const map = this.mapView.render();
+
+    wrapper.append(heroSections, nutritionProgramsSections, stepsSections, resultsView, map);
+
+    return wrapper;
+  }
+}

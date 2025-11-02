@@ -1,0 +1,101 @@
+@use '../variables';
+@use '../mixin';
+
+.map {
+  position: relative;
+  width: 100%;
+
+  .ymaps3x0--map {
+    &-container {
+      height: 400px;
+      cursor: pointer;
+
+      @media (max-width: variables.$mobile-lg) {
+        height: 362px;
+      }
+    }
+
+    &-copyrights {
+      display: none;
+    }
+  }
+
+  .marker {
+    position: absolute;
+    top: -106px;
+    left: -56px;
+    width: 113px;
+    height: 106px;
+    background-image: url('/src/assets/images/map-pin.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .contacts {
+    position: absolute;
+    top: 95px;
+    left: 110px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 570px;
+    min-height: 201px;
+    padding: 60px 75px;
+    background-color: var(--color-white);
+
+    @media (max-width: variables.$tablet-lg) {
+      @include mixin.container;
+
+      position: initial;
+      max-width: 100%;
+      align-items: center;
+    }
+
+    @media (max-width: variables.$mobile-lg) {
+      gap: 0;
+      min-height: 114px;
+    }
+
+    .title {
+      @include mixin.font-oswald;
+
+      text-align: left;
+      line-height: 21px;
+      max-width: 163px;
+      color: #111;
+
+      @media (max-width: variables.$mobile-lg) {
+        max-width: 140px;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+
+    .address {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      line-height: 20px;
+      color: var(--color-dark-grey);
+
+      @media (max-width: variables.$tablet-lg) {
+        max-width: 159px;
+        text-align: right;
+      }
+
+      @media (max-width: variables.$mobile-lg) {
+        gap: 0;
+        font-size: 14px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.catalog-page {
+  .map .contacts {
+    background-color: var(--color-grey);
+  }
+}

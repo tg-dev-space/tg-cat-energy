@@ -1,0 +1,50 @@
+@use 'variables';
+
+@mixin container {
+  padding: 53px 110px;
+  text-align: center;
+
+  @media (max-width: variables.$desktop-sm) {
+    padding: 42px 30px;
+  }
+
+  @media (max-width: variables.$tablet-md) {
+    padding: 24px 30px;
+  }
+
+  @media (max-width: variables.$mobile-lg) {
+    padding: 20px 22px;
+  }
+}
+
+@mixin font-oswald {
+  font-family: Oswald;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+@mixin green-button {
+  @include font-oswald;
+
+  padding: 10px 53px;
+  min-height: 40px;
+  font-size: 16px;
+  color: var(--color-white);
+  background-color: var(--color-green);
+  transition:
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+
+  &:focus,
+  &:hover {
+    outline: transparent;
+    background-color: var(--color-green-2);
+  }
+
+  &:active {
+    color: var(--color-white-30);
+    background-color: var(--color-green-2);
+  }
+}

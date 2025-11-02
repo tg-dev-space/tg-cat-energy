@@ -11,9 +11,10 @@ The project represents an adaptive landing page for "Cat energy".
 
 ## 🛠 Technologies
 
-- **Language** - vanilla JavaScript
-- **Styling** - CSS3, Sass
-- **Deployment**: GitHub Pages
+- **Language** - TypeScript, JavaScript
+- **Styling** - CSS3, Sass (SCSS)
+- **Build Tool** - Webpack
+- **Deployment** - GitHub Pages
 
 ## 🌐 Deployment
 

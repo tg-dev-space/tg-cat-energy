@@ -1,0 +1,233 @@
+@use '../../variables';
+@use '../../mixin';
+
+.home-page .nutrition-programs {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+
+    @media (max-width: variables.$desktop-xxs) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .item {
+    position: relative;
+    padding: 50px;
+    background-color: var(--color-grey);
+
+    @media (max-width: variables.$desktop-md) {
+      padding: 40px;
+    }
+
+    @media (max-width: variables.$desktop-xxs) {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+    }
+
+    @media (max-width: variables.$tablet-nav) {
+      padding: 40px;
+    }
+
+    @media (max-width: variables.$tablet-sm) {
+      padding: 22px;
+    }
+  }
+
+  .item-content {
+    max-width: 570px;
+    text-align: left;
+
+    .separator {
+      display: none;
+
+      @media (max-width: variables.$tablet-sm) {
+        display: block;
+      }
+    }
+
+    @media (max-width: variables.$tablet-nav) {
+      max-width: 100%;
+    }
+  }
+
+  .title {
+    @include mixin.font-oswald;
+
+    margin-top: 20px;
+    margin-bottom: 60px;
+    padding-left: 170px;
+    font-size: 36px;
+    line-height: 36px;
+
+    @media (max-width: variables.$desktop-md) {
+      padding-left: 0;
+    }
+
+    @media (max-width: variables.$desktop-xxs) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: variables.$tablet-nav) {
+      margin-bottom: 60px;
+      padding-left: 170px;
+    }
+
+    @media (max-width: variables.$tablet-sm) {
+      margin-top: 10px;
+      margin-bottom: 30px;
+      padding-left: 100px;
+      font-size: 24px;
+      line-height: 37px;
+    }
+  }
+
+  .description {
+    margin-bottom: 23px;
+
+    @media (max-width: variables.$tablet-sm) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @media (max-width: variables.$tablet-sm) {
+      color: var(--color-dark-grey);
+    }
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    outline: transparent;
+
+    &:hover .link-arrow--line,
+    &:focus .link-arrow--line {
+      width: 26px;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:active,
+    &:active {
+      opacity: 0.3;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &-content {
+      @include mixin.font-oswald;
+
+      margin-right: 20px;
+      line-height: 100%;
+    }
+
+    &-arrow--line {
+      transform: translateY(-0.5px);
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: var(--color-black);
+    }
+
+    &-arrow--tip {
+      width: 12px;
+      height: 9px;
+      background-image: url('/src/assets/images/tip.png');
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: contain;
+    }
+  }
+
+  .image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    &--cat-back {
+      top: 35px;
+      width: 100px;
+      height: 106px;
+      background-image: url('/src/assets/images/cat_back.svg');
+
+      @media (max-width: variables.$desktop-md) {
+        top: 25px;
+      }
+
+      @media (max-width: variables.$desktop-xxs) {
+        top: 0;
+        width: 200px;
+        height: 211px;
+      }
+
+      @media (max-width: variables.$tablet-nav) {
+        top: 25px;
+        left: 25px;
+        width: 100px;
+        height: 106px;
+      }
+
+      @media (max-width: variables.$tablet-sm) {
+        width: 50px;
+        height: 53px;
+      }
+    }
+
+    &--cat-back-2 {
+      top: 40px;
+      width: 134px;
+      height: 100px;
+      background-image: url('/src/assets/images/cat_back_2.svg');
+
+      @media (max-width: variables.$desktop-md) {
+        top: 30px;
+      }
+
+      @media (max-width: variables.$desktop-xxs) {
+        top: 0;
+        width: 268px;
+        height: 200px;
+      }
+
+      @media (max-width: variables.$tablet-nav) {
+        top: 25px;
+        left: 25px;
+        width: 134px;
+        height: 100px;
+      }
+
+      @media (max-width: variables.$tablet-sm) {
+        width: 67px;
+        height: 50px;
+      }
+    }
+
+    @media (max-width: variables.$desktop-md) {
+      right: 40px;
+    }
+
+    @media (max-width: variables.$desktop-xxs) {
+      position: relative;
+      top: 0;
+      right: 0;
+      flex-shrink: 0;
+      background-position: right;
+    }
+
+    @media (max-width: variables.$tablet-nav) {
+      top: 25px;
+      position: absolute;
+    }
+  }
+
+  @media (max-width: variables.$tablet-sm) {
+    padding-top: 70px;
+  }
+
+  @media (max-width: variables.$mobile-md) {
+    padding-top: 10px;
+  }
+}
