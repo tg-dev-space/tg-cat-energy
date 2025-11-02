@@ -21,7 +21,9 @@
 
   .logo {
     &-link {
-      display: block;
+      display: flex;
+      align-items: center;
+      gap: 15px;
       outline: transparent;
       transition: opacity 0.3s ease-in-out;
 
@@ -32,6 +34,16 @@
 
       &:active {
         opacity: 0.6;
+      }
+
+      @media (max-width: variables.$mobile-lg) {
+        justify-content: space-between;
+      }
+    }
+
+    &-container {
+      @media (max-width: variables.$mobile-lg) {
+        width: 68%;
       }
     }
   }

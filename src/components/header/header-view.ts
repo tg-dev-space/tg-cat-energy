@@ -1,5 +1,7 @@
 import { createElement } from '../../utils/create-element';
-import logo from '../../assets/images/logo.svg';
+import logoDesc from '../../assets/images/logo-desc.svg';
+import logoMobile from '../../assets/images/logo-mobile.svg';
+import logoName from '../../assets/images/logo-name.svg';
 
 export default class HeaderView {
   public readonly homeLink: HTMLAnchorElement;
@@ -51,8 +53,19 @@ export default class HeaderView {
   private createLogo(): void {
     const logoContainer = createElement('div', { classNames: ['logo-container'], parent: this.headerWrapper });
     const link = createElement('a', { classNames: ['logo-link'], attributes: { href: '/' }, parent: logoContainer });
+    const picture = createElement('picture', {
+      parent: link,
+    });
+    createElement('source', {
+      attributes: { srcset: logoMobile, media: '(max-width: 480px)' },
+      parent: picture,
+    });
     createElement('img', {
-      attributes: { src: logo, alt: 'Логотип' },
+      attributes: { src: logoDesc, alt: 'Логотип' },
+      parent: picture,
+    });
+    createElement('img', {
+      attributes: { src: logoName, alt: 'Логотип' },
       parent: link,
     });
   }

@@ -8,7 +8,6 @@ export default class MapController {
 
   private handleUpdateLocation(): void {
     window.addEventListener('resize', () => {
-      console.log('🚀 ~ MapController ~ handleUpdateLocation ~ window.innerWidth:', window.innerWidth);
       if (window.innerWidth <= 992) {
         this.map.update({
           location: {
