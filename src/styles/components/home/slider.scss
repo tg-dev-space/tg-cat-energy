@@ -23,7 +23,7 @@
       width: 100%;
 
       &--before {
-        clip-path: inset(0 327px 0 0);
+        clip-path: inset(0 345px 0 0);
 
         @media (max-width: variables.$tablet-slider) {
           clip-path: inset(0 155.5px 0 0);
@@ -31,7 +31,7 @@
       }
 
       &--after {
-        clip-path: inset(0 0 0 363px);
+        clip-path: inset(0 0 0 345px);
 
         @media (max-width: variables.$tablet-slider) {
           clip-path: inset(0 0 0 155.5px);
@@ -47,7 +47,7 @@
 
   .controller {
     position: absolute;
-    right: 70px;
+    right: 66px;
     bottom: 60px;
     display: flex;
     gap: 10px;
@@ -63,8 +63,8 @@
       max-width: 428px;
       height: 6px;
       border-radius: 6px;
-      appearance: none;
       background-color: var(--color-grey-track);
+      appearance: none;
 
       &::-webkit-slider-runnable-track {
         cursor: pointer;
@@ -75,8 +75,8 @@
         background-color: var(--color-grey-track);
 
         @media (max-width: variables.$tablet-sm) {
-          max-width: 50%;
-          background-color: var(--color-green);
+          max-width: 84px;
+          background-color: var(--color-white);
         }
       }
 
@@ -90,7 +90,6 @@
 
         @media (max-width: variables.$tablet-sm) {
           max-width: 84px;
-          height: 14px;
           background-color: var(--color-white);
         }
       }
@@ -107,7 +106,10 @@
         box-shadow: 0 1px 3px #00000029;
 
         @media (max-width: variables.$tablet-sm) {
-          display: none;
+          height: 8px;
+          margin-top: -1px;
+          border-radius: 20%;
+          background: var(--color-green);
         }
       }
 
@@ -115,10 +117,19 @@
         cursor: pointer;
         width: 34px;
         height: 34px;
+        margin-top: -14px;
         border: 1px solid var(--color-special-grey);
         border-radius: 50%;
+        appearance: none;
         background: var(--color-white) radial-gradient(circle, var(--color-green) 4px, transparent 4px);
         box-shadow: 0 1px 3px #00000029;
+
+        @media (max-width: variables.$tablet-sm) {
+          height: 8px;
+          margin-top: -1px;
+          border-radius: 20%;
+          background: var(--color-green);
+        }
       }
 
       &:hover {
@@ -157,7 +168,7 @@
       }
 
       &:focus::-moz-range-thumb,
-      &:active::-webkit-slider-thumb {
+      &:active::-moz-range-thumb {
         border: 1px solid var(--color-green);
         outline: none;
         transition: border 0.3s ease-in-out;

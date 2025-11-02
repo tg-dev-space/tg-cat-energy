@@ -1,6 +1,7 @@
 import { createElement } from '../../../../utils/create-element';
 import catBefore from '../../../../assets/images/cat-before.png';
 import catAfter from '../../../../assets/images/cat-after.png';
+import SliderController from '../controller/slider-controller';
 
 interface ModuleItem {
   label: string;
@@ -16,7 +17,7 @@ export default class ResultsView {
     this.section = createElement('section', { classNames: ['results', 'container'] });
     this.inputRange = createElement('input', {
       classNames: ['controller-input--results'],
-      attributes: { type: 'range', name: 'results', min: '0', max: '100', value: '50', step: '50' },
+      attributes: { type: 'range', name: 'results', min: '0', max: '100', value: '50', step: '1' },
     });
   }
 
@@ -80,16 +81,18 @@ export default class ResultsView {
     const slider = createElement('div', { classNames: ['results-slider'], parent: this.section });
 
     const images = createElement('div', { classNames: ['images'], parent: slider });
-    createElement('img', {
+    const before = createElement('img', {
       classNames: ['slide', 'slide--before'],
       attributes: { src: catBefore, alt: 'Было' },
       parent: images,
     });
-    createElement('img', {
+    const after = createElement('img', {
       classNames: ['slide', 'slide--after'],
       attributes: { src: catAfter, alt: 'Стало' },
       parent: images,
     });
+
+    new SliderController(this.inputRange, before, after);
 
     const controller = createElement('div', { classNames: ['controller'], parent: slider });
 
