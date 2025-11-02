@@ -103,5 +103,10 @@
         background-color: var(--color-green);
       }
     }
+
+    @media (max-width: variables.$mobile-lg) {
+      width: 100%;
+      justify-content: space-between;
+    }
   }
 }

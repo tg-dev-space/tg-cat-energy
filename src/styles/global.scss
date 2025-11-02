@@ -22,11 +22,14 @@
   --color-catalog-title: #222;
   --color-light-grey: #d9d9d9;
   --color-grey-border: #e6e6e6;
+  --color-grey-border-2: #e7e7e7;
+  --color-grey-border-3: #bababa;
   --color-grey-background: #eaeaea;
   --color-special-grey: #cdcdcd;
   --color-special-grey-2: #ebebeb;
   --color-grey-track: #dcdcdc;
   --color-grey-background-tablet: #eaeaea;
+  --color-error: #ff8282;
 }
 
 html {
@@ -53,6 +56,7 @@ h4,
 h5,
 h6 {
   margin: 0;
+  font-weight: 400;
 }
 
 p {

@@ -15,7 +15,6 @@ export default class HeaderController {
 
   private handleOverlayHeader(): void {
     const toggleOverlay = (): void => {
-      console.log('🚀 ~ HeaderController ~ toggleOverlay ~ location.pathname:', location.pathname);
       this.view.header.classList.toggle('overlay', location.pathname === '/' && window.innerWidth >= 1200);
     };
 
