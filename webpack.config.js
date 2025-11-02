@@ -2,7 +2,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -15,7 +14,7 @@ export default (env) => {
       filename: 'script.js',
       path: path.resolve(__dirname, 'dist'),
       clean: true,
-      publicPath: '/',
+      publicPath: './',
     },
     resolve: {
       extensions: ['.ts', '.js'],
@@ -25,6 +24,7 @@ export default (env) => {
         template: './src/index.html',
         filename: 'index.html',
         favicon: './src/assets/images/favicon.ico',
+        base: './',
       }),
       new webpack.ProgressPlugin(),
       new MiniCssExtractPlugin({
