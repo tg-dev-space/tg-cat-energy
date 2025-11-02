@@ -21,6 +21,7 @@ export default class DataPet {
         type: 'text',
         name: 'pet-name',
         placeholder: 'барсик',
+        required: 'true',
       },
     });
 
@@ -33,6 +34,7 @@ export default class DataPet {
         type: 'number',
         name: 'pet-weight',
         placeholder: '7',
+        required: 'true',
       },
     });
     const ageInput = this.formView.createInputWrapper({
@@ -44,6 +46,7 @@ export default class DataPet {
         type: 'number',
         name: 'pet-age',
         placeholder: '7',
+        required: 'true',
       },
     });
 

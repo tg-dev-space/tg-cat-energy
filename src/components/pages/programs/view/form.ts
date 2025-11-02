@@ -1,5 +1,6 @@
 import { FormElements, InputContent } from '../../../../types/view-components';
 import { createElement } from '../../../../utils/create-element';
+import FormController from '../controller/form-controller';
 import Additionally from './additionally';
 import Comments from './comments';
 import DataPet from './data-pet';
@@ -11,6 +12,7 @@ export default class FormView {
 
   constructor() {
     this.form = createElement('form', { classNames: ['form'] });
+    new FormController(this.form);
   }
 
   public render(): HTMLElement {
